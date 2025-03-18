@@ -1,6 +1,7 @@
 import express from 'express'
 import dotenv from 'dotenv';
 import connnectDb from './config/database.js';
+import userRouter from './route/userRoute.js';
 
 
 //Configurations
@@ -15,6 +16,10 @@ connnectDb();
 //Middleware
 
 app.use(express.json());
+
+
+//Routes
+app.use('/api/user',userRouter);
 
 
 //Home Route
